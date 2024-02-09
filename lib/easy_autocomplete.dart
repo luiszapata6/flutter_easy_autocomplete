@@ -204,7 +204,7 @@ class _EasyAutocompleteState extends State<EasyAutocomplete> {
   void closeOverlay() {
     if (_hasOpenedOverlay) {
       _overlayEntry!.remove();
-      setState(() { 
+      setState(() {
         _hasOpenedOverlay = false;
       });
     }
@@ -284,10 +284,9 @@ class _EasyAutocompleteState extends State<EasyAutocomplete> {
     if (_debounce != null) _debounce?.cancel();
     if (widget.focusNode == null) {
       _focusNode.removeListener(() {
-        if (_focusNode.hasFocus)
-          openOverlay();
-        else
-          closeOverlay();
+        if (_focusNode.hasFocus) openOverlay();
+        /* else
+          closeOverlay(); */
       });
       _focusNode.dispose();
     }
